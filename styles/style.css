@@ -119,11 +119,6 @@ ol {
   align-items: center;
 }
 
-.search-form__label:has(:focus-visible) {
-  outline: solid 1px #fff;
-  outline-offset: 1px;
-}
-
 .search-form__label-text {
   line-height: 1;
 }
@@ -132,11 +127,18 @@ ol {
   text-decoration: underline;
 }
 
+.search-form__label:has(:not(:active):focus-visible) {
+  outline: 1px #fff solid;
+  outline-offset: 1px;
+}
+
 .search-form__textfield {
   appearance: none;
   border: none;
   border-top: solid 1px #fff;
   border-bottom: solid 1px #fff;
+  border-right: solid 1px transparent;
+  border-left: solid 1px transparent;
   background-color: transparent;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
@@ -153,16 +155,12 @@ ol {
 }
 
 .search-form__textfield:active {
-  border: none;
+  border-right-color: #fff;
+  border-left-color: #fff;
 }
 
 .search-form__textfield:focus {
   outline: none;
-}
-
-.search-form__textfield:focus-visible {
-  outline: solid 1px #fff;
-  outline-offset: 1px;
 }
 
 .search-form__checkbox-list {
