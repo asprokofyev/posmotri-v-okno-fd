@@ -16,7 +16,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -68,10 +68,10 @@ ol {
 .content {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-template-areas: "result details";
+  grid-template-areas: 'result details';
   align-items: end;
   column-gap: 30px;
-  width: 1140px;
+  min-width: 1140px;
 }
 
 .result {
@@ -91,15 +91,12 @@ ol {
 .result__video {
   width: 100%;
   height: 100%;
-  position: relative;
-  inset: 0;
   object-fit: cover;
   object-position: center;
 }
 
 .search-form {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   align-items: start;
   column-gap: 40px;
 }
@@ -109,7 +106,7 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 5px;
@@ -119,6 +116,7 @@ ol {
   display: flex;
   width: fit-content;
   cursor: pointer;
+  align-items: center;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -140,11 +138,18 @@ ol {
   border-top: solid 1px #fff;
   border-bottom: solid 1px #fff;
   background-color: transparent;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  min-width: 225px;
+}
+
+.search-form__textfield::placeholder {
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.7);
-  width: 225px;
 }
 
 .search-form__textfield:active {
@@ -163,7 +168,6 @@ ol {
 .search-form__checkbox-list {
   display: flex;
   column-gap: 15px;
-  width: 212px;
 }
 
 .search-form__pseudo-checkbox {
@@ -175,7 +179,7 @@ ol {
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  content: "";
+  content: '';
   position: relative;
   display: block;
   top: 1px;
@@ -189,7 +193,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
   text-align: center;
@@ -197,8 +201,7 @@ ol {
   background-color: transparent;
   border: solid 1px #fff;
   padding: 0;
-  width: 100%;
-  height: 34px;
+  min-height: 34px;
   cursor: pointer;
 }
 
@@ -220,18 +223,20 @@ ol {
 }
 
 .search-form__submit-button {
-  width: 194px;
+  min-width: 194px;
   align-self: end;
+  justify-self: end;
 }
 
 .content__details {
   grid-area: details;
-  width: 399px;
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: start;
   row-gap: 25px;
+  min-width: 399px;
+  width: 100%;
 }
 
 .title {
@@ -249,8 +254,11 @@ ol {
 .content__list-container {
   position: relative;
   width: 100%;
+  max-width: 399px;
   height: 298px;
   overflow-y: auto;
+  padding-left: 2px;
+  padding-right: 3px;
 }
 
 .content__list {
@@ -259,23 +267,23 @@ ol {
   justify-content: start;
   align-items: start;
   row-gap: 30px;
-  width: 390px;
-}
-
-.content__list-item {
-  width: 100%;
-  padding-left: 3px;
 }
 
 .content__card-link {
   display: block;
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .content__card-link:hover {
   text-decoration: underline;
-  cursor: pointer;
+  background-color: transparent;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+  text-decoration: none;
 }
 
 .content__card-link:focus {
@@ -292,11 +300,13 @@ ol {
 
 .content__video-card {
   display: flex;
+  min-width: 390px;
+  justify-content: space-between;
 }
 
 .content__video-card-description-container {
-  flex-grow: 1;
-  width: 196px;
+  max-width: 196px;
+  width: 100%;
 }
 
 .content__video-card-title {
@@ -312,7 +322,7 @@ ol {
 }
 
 .content__video-card-description {
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   line-height: 90%;
   display: -webkit-box;
@@ -330,6 +340,6 @@ ol {
 }
 
 .more-button {
-  width: 390px;
-  margin: 30px auto 0;
+  min-width: 390px;
+  margin-top: 30px;
 }
